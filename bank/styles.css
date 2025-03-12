@@ -51,10 +51,12 @@ main {
 }
 
 .quick-actions {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    display: flex; /* Alinha os cards horizontalmente */
+    justify-content: space-between; /* Distribui o espaço entre os cards */
+    gap: 10px; /* Espaçamento entre os cards */
     margin: 20px 0;
+    overflow-x: auto; /* Permite rolagem horizontal em telas muito pequenas */
+    padding-bottom: 10px; /* Espaço para a barra de rolagem */
 }
 
 .action-card {
@@ -63,11 +65,24 @@ main {
     border-radius: 10px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Faz com que os cards ocupem o mesmo espaço */
+    min-width: 120px; /* Largura mínima para cada card */
+    max-width: 150px; /* Largura máxima para cada card */
+    height: 120px; /* Altura fixa para todos os cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
 }
 
 .action-card i {
     font-size: 24px;
     margin-bottom: 10px;
+}
+
+.action-card span {
+    font-size: 14px;
+    text-align: center;
 }
 
 .account-info, .credit-card {
